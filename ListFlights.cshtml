@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SampleApp.Models.Flights>
+
+@{
+    ViewBag.Title = "ListFlights";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListFlights</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.flightID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flightName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flightArrival)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flightDeparture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Passenger)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaptainID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.flightID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flightName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flightArrival)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flightDeparture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passenger)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaptainID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.flightID })
+            @Html.ActionLink("Details", "Details", new { id = item.flightID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.flightID  })
+        </td>
+    </tr>
+}
+
+</table>

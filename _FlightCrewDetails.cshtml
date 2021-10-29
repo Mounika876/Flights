@@ -1,0 +1,31 @@
+﻿@using SampleApp.Models
+<table class="table">
+    <tr>
+        <th>
+            Crew ID
+        </th>
+        <th>
+            Crew Name
+        </th>
+        <th>
+            Crew Designation
+        </th>
+        
+    </tr>
+    @foreach (var item in ViewBag.CrewDetails)
+    {
+       <tr>
+           <td>
+                @item.CrewID
+           </td>
+           <td>
+               @item.CrewName
+           </td>
+           <td>
+               @item.CrewDesig
+           </td>
+       </tr> 
+
+    }
+    
+</table>

@@ -1,0 +1,73 @@
+﻿@model SampleApp.Models.Flights
+    @using SampleApp.Models
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Flights</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.flightID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flightID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flightName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flightName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flightArrival)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flightArrival)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flightDeparture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flightDeparture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaptainID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaptainID)
+        </dd>
+
+    </dl>
+</div>
+<hr />
+<label>Crew Members for the Flight</label>
+<div style="background-color:aquamarine">
+    @Html.Partial("_FlightCrewDetails",(IEnumerable<Crew> )ViewBag.CrewDetails)
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.flightID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
